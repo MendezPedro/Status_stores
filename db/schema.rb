@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_29_204218) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_29_212752) do
   create_table "device_servers", force: :cascade do |t|
     t.string "name"
-    t.string "status"
+    t.integer "status"
     t.integer "store_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
