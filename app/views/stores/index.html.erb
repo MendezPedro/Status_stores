@@ -1,0 +1,22 @@
+<h1>Tiendas</h1>
+
+<div>
+    <% @stores.each do |s| %>
+        <h3>Restaurante</h3>
+        <div>
+            <p>Nombre: <%= s.name %></p>
+            <p>Estado: <%= s.status %></p>
+            <p>Fecha de actualización: <%= s.updated_at %></p>
+        </div> 
+        <div>
+        <h3>Dispositivos</h3>
+        <% s.device_server.each do |d| %>
+            <div >
+                <p>Nombre: <%= d.name %></p>
+                <p>Estado: <%= d.status %></p>
+                <p>Fecha de actualización: <%= d.updated_at %></p>
+            </div> 
+        <% end %>
+        </div>
+    <% end %>
+</div>
