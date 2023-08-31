@@ -7,8 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
-Store.destroy_all
 DeviceServer.destroy_all
+Store.destroy_all
 
 2.times do |x|
     Store.create(
@@ -16,11 +16,11 @@ DeviceServer.destroy_all
         status: 0)
 end
 
-devices_server = ["Impresora", "servidor web", "servidor de base de datos"]
-Store.all.each do |store|
+devices_server = ["Impresora", "Servidor_web", "Servidor_de_base_de_datos"]
+Store.all.each_with_index do |store,index|
     devices_server.each do |devices|
         DeviceServer.create(
-            name: devices,
+            name: "#{devices}_#{index + 1}",
             status: 0,
             store_id: store.id
         )
