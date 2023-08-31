@@ -5,7 +5,13 @@
         <h3 class="card-title text-danger">Datos del local</h3>
         <div>
           <h5 class="card-title">Nombre: <%= s.name %></h5>
-          <p class="card-text">Estado: <%= s.status %></p>
+          <% if s.status == "ok" %>
+            <span class="btn btn-success btn-block"><%= s.status %></span>
+          <% elsif s.status == "warning" %>
+            <span class="btn btn-warning btn-block"><%= s.status %></span>
+          <% else %>
+            <span class="btn btn-danger btn-block"><%= s.status %></span>
+          <% end %>
           <p class="card-text">Fecha de actualización: <%= s.updated_at %></p>
         </div> 
         <div class="row my-3">
@@ -15,7 +21,11 @@
               <div class="card my-3">
                 <div class="card-body">
                   <p class="card-title">Nombre: <%= d.name %></p>
-                  <p class="card-text">Estado: <%= d.status %></p>
+                  <% if d.status == "ok" %>
+                    <span class="btn btn-success btn-block"><%= d.status %></span>
+                  <% else %>
+                    <span class="btn btn-danger btn-block"><%= d.status %></span>
+                  <% end %>
                   <p class="card-text">Fecha de actualización: <%= d.updated_at %></p>
                 </div> 
               </div>

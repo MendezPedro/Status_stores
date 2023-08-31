@@ -15,6 +15,7 @@ class ServerJob
     # Enviar la solicitud y obtener la respuesta
     response = http.request(request)
 
+    # Actualizar dispositivos y servidores
     if response.code == '200'
       data = JSON.parse(response.body)
 
@@ -26,6 +27,18 @@ class ServerJob
           device.update(status: 1)
         end
       end
+    end
+
+    # Actualizar las tiendas
+    Store.all.each do |store|
+      device_array = store.device_server.pluck(:status)
+      if device_array.all? { |status| status == "ok" }
+        store.update(status: 0)
+      elsif device_array.all? { |status| status == "error" }
+        store.update(status: 2)
+      else
+        store.update(status: 1)
+      end      
     end
 
   end
