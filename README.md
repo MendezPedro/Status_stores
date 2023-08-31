@@ -1,6 +1,6 @@
 # Status Of Stores
 
-This project consists of the creation of an application to monitor the status of the stores with their respective devices and servers. in order to know if they are operational
+This project consists of the creation of an application to monitor the status of the stores with their respective devices and servers. to see if they are working
 
 ## Table of Contents
 * [Ruby, Rails & Redis version](#rails-version)
