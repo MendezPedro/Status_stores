@@ -40,6 +40,7 @@ class ServerJob
         store.update(status: 1)
       end      
     end
-
+    # Intervalo de tiempo
+    self.class.perform_in(30.seconds)
   end
 end
