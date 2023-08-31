@@ -1,24 +1,33 @@
-# README
+# Status Of Stores
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project consists of the creation of an application to monitor the status of the stores with their respective devices and servers. in order to know if they are operational
 
-Things you may want to cover:
+## Table of Contents
+* [Ruby, Rails & Redis version](#rails-version)
+* [Basic Usage](#basic-usage)
+* [Ruby & Rails Gems](#rails-gems)
 
-* Ruby version
 
-* System dependencies
+## Ruby, Rails & Redis version
 
-* Configuration
+* Ruby ~> '3.0.2'
+* Rails ~> '7.0.7.2'
+* Redis-server ~> '6.0.16'
 
-* Database creation
+## Basic Usage
 
-* Database initialization
+```ruby
+1.- bundle
+2.- rails db:seed
+3.- rails s
+4.- bundle exec sidekiq
+```
 
-* How to run the test suite
+## Ruby & Rails Gems
 
-* Services (job queues, cache servers, search engines, etc.)
+```ruby
+gem "sidekiq", "~> 6.2"
+gem "bootstrap", "~> 5.2.0"
+gem "sassc-rails"
+```
 
-* Deployment instructions
-
-* ...
