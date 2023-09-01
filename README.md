@@ -3,9 +3,9 @@
 This project consists of the creation of an application to monitor the status of the stores with their respective devices and servers. to see if they are working
 
 ## Table of Contents
-* [Ruby, Rails & Redis Version](#ruby-rails-redis-version)
+* [Ruby, Rails, and Redis Version](#ruby-rails-&-redis-version)
 * [Basic Usage](#basic-usage)
-* [Ruby & Rails Gems](#ruby-rails-gems)
+* [Ruby and Rails Gems](#ruby-&-rails-gems)
 
 
 
