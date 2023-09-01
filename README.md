@@ -23,11 +23,16 @@ This project consists of the creation of an application to monitor the status of
 4.- bundle exec sidekiq
 ```
 
+Go to port http://localhost:3000/
+
+push the "inicio" button to start the jobs that update the data every 30 seconds
+
 ## Ruby & Rails Gems
 
 ```ruby
 gem "sidekiq", "~> 6.2"
 gem "bootstrap", "~> 5.2.0"
 gem "sassc-rails"
+gem "jquery-rails"
 ```
 
