@@ -1,17 +1,27 @@
-document.addEventListener("DOMContentLoaded", function() {
-  console.log("Mensaje que se mostrará en la consola");
 
-  // Obtén una referencia al botón por su ID
-  var startButton = document.getElementById("startButton");
+$(document).ready(function() {
+  // Verificar si el botón ya ha sido presionado y ocultado
+  if (localStorage.getItem('botonPresionado')) {
+    $('#startButton').hide(); // Ocultar el botón si ya se presionó y está almacenado en el almacenamiento local
+  } else {
+    $('#startButton').show();
+  }
 
-  // Agrega un oyente de evento de clic al botón
-  startButton.addEventListener("click", function() {
-    startButton.disabled = true;
-    startButton.style.display = "none";
+  $('#startButton').closest('form').on('submit', function(event) {
+    event.preventDefault(); // Evitar que el formulario se envíe normalmente
+
+    // Realizar acciones cuando se presiona el botón
+
+    // Deshabilitar el botón para que no se pueda presionar nuevamente
+    $('#startButton').prop('disabled', true);
+
+    // Ocultar el botón
+    $('#startButton').hide();
+
+    // Almacenar en el almacenamiento local que el botón fue presionado
+    localStorage.setItem('botonPresionado', 'true');
+
+    // Aquí podrías realizar una llamada AJAX si estás usando `remote: true` en el botón
+    // Para interactuar con el servidor sin recargar la página
   });
 });
-
-var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-  return new bootstrap.Popover(popoverTriggerEl)
-})
